@@ -1095,8 +1095,8 @@ void JkBmsBle::decode_device_info_(const std::vector<uint8_t> &data) {
   ESP_LOGI(TAG, "  Vendor ID: %s", std::string(data.begin() + 6, data.begin() + 6 + 16).c_str());
   ESP_LOGI(TAG, "  Hardware version: %s", std::string(data.begin() + 22, data.begin() + 22 + 8).c_str());
   ESP_LOGI(TAG, "  Software version: %s", std::string(data.begin() + 30, data.begin() + 30 + 8).c_str());
-  ESP_LOGI(TAG, "  Uptime: %u s", jk_get_32bit(38));
-  ESP_LOGI(TAG, "  Power on count: %u", jk_get_32bit(42));
+  ESP_LOGI(TAG, "  Uptime: %lu s", jk_get_32bit(38));
+  ESP_LOGI(TAG, "  Power on count: %lu", jk_get_32bit(42));
   ESP_LOGI(TAG, "  Device name: %s", std::string(data.begin() + 46, data.begin() + 46 + 16).c_str());
   ESP_LOGI(TAG, "  Device passcode: %s", std::string(data.begin() + 62, data.begin() + 62 + 16).c_str());
   ESP_LOGI(TAG, "  Manufacturing date: %s", std::string(data.begin() + 78, data.begin() + 78 + 8).c_str());
